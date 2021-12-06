@@ -11,7 +11,6 @@
 
 #include <iostream>
 #include <cstring>
-#include <vector>
 
 // @brief Esta función escribe el mensaje inicial con la explicación del programa.
 int MensajeInicial() {
@@ -21,8 +20,14 @@ int MensajeInicial() {
 
 int main () {
   //MensajeInicial()
-  char primera_palabra[10], segunda_palabra[10];
-  //std::cin >> scanf("%s", primera_palabra) >> scanf("%s", segunda_palabra);
-  //if (strcmp() == 0);
+  std::string primera_palabra, segunda_palabra;
+  std::cin >> primera_palabra >> segunda_palabra;
+  if (primera_palabra == segunda_palabra) {
+    std::cout << primera_palabra << " = " << segunda_palabra << std::endl;
+  } else if (primera_palabra < segunda_palabra) {
+    std::cout << primera_palabra << " < " << segunda_palabra << std::endl;
+  } else {
+    std::cout << primera_palabra << " > " << segunda_palabra << std::endl;
+  }
   return 0;
 }

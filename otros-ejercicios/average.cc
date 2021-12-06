@@ -20,12 +20,13 @@ int MensajeInicial() {
 
 int main() {
   // MensajeInicial()
-  int numero_introducido;
-  double media{0};
-  double suma{0};
-  int cantidad_numeros{0};
-  for (int contador )
-  media = suma / double(cantidad_numeros);
-  std::cout << std::fixed << std::setprecision(2) << media << std::endl;
+  double numero_introducido;
+  double suma{0}, cantidad{0};
+  while (std::cin.peek() != '\n') {
+    std::cin >> numero_introducido;
+    suma += numero_introducido;
+    ++cantidad; 
+  }
+  std::cout << std::fixed << std::setprecision(2) << suma / cantidad << std::endl;
   return 0;
 }
