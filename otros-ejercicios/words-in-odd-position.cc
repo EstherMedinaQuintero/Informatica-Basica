@@ -15,10 +15,22 @@
 
 int main() {
   std::string palabra_introducida;
-  std::vector<std::string> palabras_introducidas{};
-  while(std::cin >> palabra_introducida) {
-    
+  std::vector<std::string> palabras_posicion_impar;
+  int posicion{1};
+  while(getline(std::cin, palabra_introducida)) {
+    if (palabra_introducida == ".") {
+      break;
+    }
+    if (posicion % 2 != 0) {
+      palabras_posicion_impar.push_back(palabra_introducida);
+    }
+    ++posicion;
   }
-
+  if (palabras_posicion_impar.size() < 1) {
+    return 0;
+  }
+  for (int contador{int(palabras_posicion_impar.size() - 1)}; contador >= 0; --contador) {
+    std::cout << palabras_posicion_impar[contador] << std::endl;
+  }
   return 0;
 }
