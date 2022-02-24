@@ -1,0 +1,53 @@
+
+Primer ejercicio de la Práctica 11 (no copiado del todo, probablemente no compile)
+(Copiar los archivos ya preparados)
+
+    CMakeList.txt
+    src
+        persona.cc
+        persona.h 
+        persona_main.cc
+
+(HEADER)
+
+class Persona {
+ public
+  Persona();
+  Persona(const string& nombre, const string& apellido, const int edad);
+  void Print() const;
+  /// Getters
+  string nombre() const { return nombre_ }
+  string apellido() const { return apellido_ }
+  int edad() const { return edad_ }
+ private
+  string nombre_{"}; /// Comentario
+  string apellido_{"}; /// Comentario
+  int edad_{0}; /// Comentario
+};
+
+(MAIN)
+
+int main() {
+  Persona otra;
+  Persona albert{"Albert", "Einstein", 18};
+  otra.Print();
+  albert.Print();
+  return 0;
+}
+
+(CC)
+
+@param[in] /// Parámetro de entrada
+@param[OUT] /// Parámetro de salida
+Persona::Persona(const string& nombre, const string& apellido, const int edad) : nombre_{nombre}, apellido_{apellido}, edad_{edad} {} /// Constructor nuestro
+Persona::Persona() : nombre_{"Alan"}, apellido_{"Turing"}, edad_{41} {} /// Constructor por defecto
+/// Getters (si están aquí, hay que quitarlas del otro)
+string Persona::nombre() const { return nombre_ };
+string Persona::apellido() const { return apellido_ };
+int Persona::edad() const { return edad_ };
+void Persona::Print() const { cout << nombre_ + " " apellido_ + " " + edad_ << endl; };
+
+(CMAKE)
+
+/// Es un metaconstructor. Construye por él mismo el constructor.
+/// Dentro de build: cmake (ruta del cmake)
