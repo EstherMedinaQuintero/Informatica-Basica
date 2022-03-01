@@ -1,0 +1,5 @@
+Fichero con cosas escritas
+bla bla.
+arbol arbusto,
+casa, botella
+zorro, criatura, Catalan.

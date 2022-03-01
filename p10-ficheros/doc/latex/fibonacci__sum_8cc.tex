@@ -1,0 +1,127 @@
+\hypertarget{fibonacci__sum_8cc}{}\doxysubsection{fibonacci\+\_\+sum.\+cc File Reference}
+\label{fibonacci__sum_8cc}\index{fibonacci\_sum.cc@{fibonacci\_sum.cc}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include \char`\"{}fibonacci\+\_\+sum.\+h\char`\"{}}\newline
+Include dependency graph for fibonacci\+\_\+sum.\+cc\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{fibonacci__sum_8cc_aeac332c082069f54e8769d311dd2049d}{Usage}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Universidad de La Laguna Escuela Superior de Ingeniería y Tecnología Grado en Ingeniería Informática Informática Básica. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{fibonacci__sum_8cc_ac425b2614dbfd00399b158067d4015d2}{Fibonacci\+Sum}} (const size\+\_\+t k\+Limit)
+\begin{DoxyCompactList}\small\item\em Devuelve el valor de la suma de todos los términos de valor par de la serie de Fibonacci menores que k\+Limit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Function Documentation}
+\mbox{\Hypertarget{fibonacci__sum_8cc_ac425b2614dbfd00399b158067d4015d2}\label{fibonacci__sum_8cc_ac425b2614dbfd00399b158067d4015d2}} 
+\index{fibonacci\_sum.cc@{fibonacci\_sum.cc}!FibonacciSum@{FibonacciSum}}
+\index{FibonacciSum@{FibonacciSum}!fibonacci\_sum.cc@{fibonacci\_sum.cc}}
+\doxyparagraph{\texorpdfstring{FibonacciSum()}{FibonacciSum()}}
+{\footnotesize\ttfamily size\+\_\+t Fibonacci\+Sum (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{k\+Limit }\end{DoxyParamCaption})}
+
+
+
+Devuelve el valor de la suma de todos los términos de valor par de la serie de Fibonacci menores que k\+Limit. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em k\+Limit.} & Se suman los términos pares menores que k\+Limit \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+La suma de los términos pares menores que k\+Limit 
+\end{DoxyReturn}
+
+
+Definition at line 52 of file fibonacci\+\_\+sum.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{52                                          \{}
+\DoxyCodeLine{53   \textcolor{keywordtype}{size\_t} second\_to\_last\{0\},  \textcolor{comment}{// Second to last term}}
+\DoxyCodeLine{54            last\{1\},          \textcolor{comment}{// Last term generated}}
+\DoxyCodeLine{55            new\_term;         \textcolor{comment}{// New term of the serie}}
+\DoxyCodeLine{56   \textcolor{keywordtype}{size\_t} \textcolor{keywordtype}{long} sum\{0\};        \textcolor{comment}{// Accumulated sum of the terms}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58   \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{59     new\_term = last + second\_to\_last;}
+\DoxyCodeLine{60     \textcolor{keywordflow}{if} (new\_term \% 2 == 0) \{}
+\DoxyCodeLine{61       sum += new\_term;}
+\DoxyCodeLine{62     \}}
+\DoxyCodeLine{63     \textcolor{comment}{// Uncomment for debug: print each new term}}
+\DoxyCodeLine{64     \textcolor{comment}{// std::cout << "Term: " << new\_term << std::endl;}}
+\DoxyCodeLine{65     second\_to\_last = last;}
+\DoxyCodeLine{66     last = new\_term;}
+\DoxyCodeLine{67   \} \textcolor{keywordflow}{while} (new\_term < kLimit);}
+\DoxyCodeLine{68   \textcolor{keywordflow}{return} sum;}
+\DoxyCodeLine{69 \}}
+
+\end{DoxyCode}
+
+
+Referenced by main().
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{fibonacci__sum_8cc_aeac332c082069f54e8769d311dd2049d}\label{fibonacci__sum_8cc_aeac332c082069f54e8769d311dd2049d}} 
+\index{fibonacci\_sum.cc@{fibonacci\_sum.cc}!Usage@{Usage}}
+\index{Usage@{Usage}!fibonacci\_sum.cc@{fibonacci\_sum.cc}}
+\doxyparagraph{\texorpdfstring{Usage()}{Usage()}}
+{\footnotesize\ttfamily void Usage (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Universidad de La Laguna Escuela Superior de Ingeniería y Tecnología Grado en Ingeniería Informática Informática Básica. 
+
+\begin{DoxyAuthor}{Author}
+F. de Sande 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+7.\+nov.\+2020
+\end{DoxyDate}
+Cada nuevo término de la serie de Fibonacci se genera sumando los dos anteriores. Comenzando con 0 y 1, los primeros 10 términos serán\+: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 Desarrolle en C++ un programa que calcule la suma de todos los términos de valor par de la serie que sean menores que 1000. \begin{DoxySeeAlso}{See also}
+\href{https://docs.google.com/document/d/1-3hTIVf8tPrbn9u0vs0Cm2IGyX1XBgv8hReVU0KOSUQ/edit?usp=sharing}{\texttt{ https\+://docs.\+google.\+com/document/d/1-\/3h\+T\+I\+Vf8t\+Prbn9u0vs0\+Cm2\+I\+Gy\+X1\+X\+Bgv8h\+Re\+V\+U0\+K\+O\+S\+U\+Q/edit?usp=sharing}} 
+
+stoi \href{http://www.cplusplus.com/reference/string/stoi/}{\texttt{ http\+://www.\+cplusplus.\+com/reference/string/stoi/}} An Object Oriented Version of the program\+: 
+
+\href{https://stackoverflow.com/questions/21360694/sum-of-even-fibonacci-numbers-under-1000}{\texttt{ https\+://stackoverflow.\+com/questions/21360694/sum-\/of-\/even-\/fibonacci-\/numbers-\/under-\/1000}} Muestra el modo de uso correcto del programa En caso de que el uso no sea el correcto, muestra el mensaje y finaliza la ejecución del programa. El programa precisa un único número natural para su ejecución.
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em argc} & Number of command line parameters \\
+\hline
+\mbox{\texttt{ in}}  & {\em argv} & Vector containing (char$\ast$) the parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 33 of file fibonacci\+\_\+sum.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{33                                    \{}
+\DoxyCodeLine{34   \textcolor{keywordflow}{if} (argc != 2) \{}
+\DoxyCodeLine{35     std::cout << argv[0] << \textcolor{stringliteral}{": Falta un número natural como parámetro"} << std::endl;}
+\DoxyCodeLine{36     std::cout << \textcolor{stringliteral}{"Pruebe "} << argv[0] << \textcolor{stringliteral}{" -\/-\/help para más información"} << std::endl;}
+\DoxyCodeLine{37     exit(EXIT\_SUCCESS);}
+\DoxyCodeLine{38   \}}
+\DoxyCodeLine{39   std::string parameter\{argv[1]\};}
+\DoxyCodeLine{40   \textcolor{keywordflow}{if} (parameter == \textcolor{stringliteral}{"-\/-\/help"}) \{}
+\DoxyCodeLine{41     std::cout << \mbox{\hyperlink{fibonacci__sum_8h_a08728caac9a53278aea6a3218ae1dfeb}{kHelpText}} << std::endl;}
+\DoxyCodeLine{42     exit(EXIT\_SUCCESS);}
+\DoxyCodeLine{43   \}}
+\DoxyCodeLine{44 \}}
+
+\end{DoxyCode}
+
+
+References k\+Help\+Text.
+
+
+
+Referenced by main().
+
+Here is the caller graph for this function\+:
+% FIG 2
